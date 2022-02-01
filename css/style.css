@@ -1,0 +1,95 @@
+body {
+    background: linear-gradient(to top, rgba(95, 106, 207, 1), rgba(95, 106, 207, 0.6), rgba(95, 106, 207, 0));
+    background-attachment: fixed;
+}
+
+.container {
+    background: white;
+    margin: 0 auto;
+    width: 30%;
+    border-radius: 10px;
+    /* box-shadow: 0.5px 0.5px 1px; */
+    height: 400px;
+}
+
+.card {
+    padding: 0px 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 2 em;
+    padding-top: 20px;
+}
+
+.fa-plus-square {
+    background-color: white;
+    color: rgb(24, 110, 237);
+    font-size: 2.3em;
+}
+
+.fa-trash {
+    color: red;
+}
+
+input {
+    width: 80%;
+    height: 20px;
+    padding: 5px;
+    font-size: 15px;
+}
+
+.textInput {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.liItem {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 20px 5px;
+    background: rgb(235, 246, 247);
+    justify-content: space-between;
+}
+
+li {
+    font-weight: bold;
+}
+
+.delete-item:hover {
+    font-size: 1.4em;
+    color: red;
+}
+
+.add-item:hover {
+    font-size: 1.15em;
+}
+
+h3 {
+    display: inline;
+    font-size: 1em;
+    padding: 10px;
+}
+
+.button {
+    background: rgb(24, 110, 237);
+    color: rgb(255, 255, 255);
+    font-size: 1.1em;
+    border: none;
+    border-radius: 3px;
+    padding: 6px 8px;
+}
+
+.button:hover {
+    font-size: 1.25em;
+    cursor: pointer;
+}

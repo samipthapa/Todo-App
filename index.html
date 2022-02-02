@@ -15,27 +15,28 @@
             <h1 class="heading">Todo App</h1>
             <form action="" class="form">
                 <div class="textInput">
-                    <input type="text" placeholder="  Add your new todo">
+                    <input type="text" placeholder="  Add your new todo" class="task">
                     <a href="#" class="add-item">
                         <i class="fas fa-plus-square fa-2x"></i>
                     </a>
-                </div>
-                
+                </div>  
             </form>
-            <ul>
-                <div class="liItem">
-                    <li>Buy a new gaming laptop</li>
+            <ul class='task-list'>
+                <!-- <div class="liItem" id="liItem">
+                    <li>Samip</li>
                     <a href="#" class="delete-item">
                         <i class="fas fa-trash fa-lg"></i>   
                     </a>
-                </div>
-                
+                </div> -->
             </ul>
-            <h3>You have 1 pending tasks</h3>
-            <a href="#">
-                <button type="button" class="button">Clear All</button>
-            </a>
+            <div class="pending">
+                <h3></h3>
+                <a href="#">
+                    <button type="button" class="button">Clear All</button>
+                </a>
+            </div>
         </div>
     </div>
+    <script src="javascript/script.js"></script>
 </body>
 </html>

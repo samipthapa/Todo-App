@@ -8,8 +8,11 @@ body {
     margin: 0 auto;
     width: 30%;
     border-radius: 10px;
-    /* box-shadow: 0.5px 0.5px 1px; */
-    height: 400px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .card {
@@ -31,6 +34,7 @@ body {
 
 .fa-trash {
     color: red;
+    font-size: 1.5em;
 }
 
 input {
@@ -66,7 +70,7 @@ li {
 }
 
 .delete-item:hover {
-    font-size: 1.4em;
+    font-size: 1.3em;
     color: red;
 }
 
@@ -87,9 +91,15 @@ h3 {
     border: none;
     border-radius: 3px;
     padding: 6px 8px;
+    margin-bottom: 10px;
 }
 
 .button:hover {
     font-size: 1.25em;
     cursor: pointer;
 }
+
+.pending {
+    margin: 10px 0;
+}
+

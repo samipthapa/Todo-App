@@ -6,15 +6,12 @@ document.body.addEventListener('click', deleteTask);
 
 document.querySelector('.button').addEventListener('click', clearTasks);
 
-
-function addTask(e) {
-    const task = document.querySelector('.task');
-
+function appendElement(task) {
     const div = document.createElement('div');
     div.className = 'liItem';
 
     const li = document.createElement('li');
-    li.appendChild(document.createTextNode(task.value));
+    li.appendChild(document.createTextNode(task));
 
     const a = document.createElement('a');
     a.className = 'delete-item';
@@ -27,7 +24,12 @@ function addTask(e) {
     div.appendChild(li);
     div.appendChild(a);
     document.querySelector('ul.task-list').appendChild(div);
+}
 
+function addTask(e) {
+    const task = document.querySelector('.task');
+    appendElement(task.value);
+    addToLocalStorage(task.value);
     task.value = '';
     pendingTask();
     e.preventDefault();
@@ -35,6 +37,7 @@ function addTask(e) {
 
 function deleteTask(e) {
     if (e.target.parentElement.classList.contains('delete-item')) {
+        removeFromStorage(e.target.parentElement.parentElement.firstChild.textContent);
         e.target.parentElement.parentElement.remove();
     }
     pendingTask();
@@ -45,6 +48,7 @@ function clearTasks() {
     while (ul.firstChild) {
         ul.lastChild.remove();
     }
+    localStorage.clear();
     pendingTask();
 }
 
@@ -54,4 +58,33 @@ function pendingTask() {
     heading.textContent = `You have ${count} pending tasks`;
 }
 
+function addToLocalStorage(task) {
+    let tasks;
+    if (localStorage.getItem('tasks') === null) {
+        tasks = [];
+    } else {
+        tasks = JSON.parse(localStorage.getItem('tasks'));
+    }
+    tasks.push(task);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+function removeFromStorage(task) {
+    const tasks = JSON.parse(localStorage.getItem('tasks'));
+    const index = tasks.indexOf(task);
+    tasks.splice(index, 1);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+function checkFromStorage() {
+    let tasks = JSON.parse(localStorage.getItem('tasks'));
+    if(tasks) {
+        tasks.forEach(function(task) {
+            appendElement(task);
+        });
+    }
+    pendingTask();
+}
+
 pendingTask();
+checkFromStorage();

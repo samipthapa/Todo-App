@@ -103,3 +103,8 @@ h3 {
     margin: 10px 0;
 }
 
+@media all and (max-width: 500px) {
+    .container {
+        width: 80%;
+    }
+}
